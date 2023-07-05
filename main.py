@@ -62,13 +62,14 @@ for row in rows:
       header_clean = re.sub(r'^\s+|\s+$', "", header_text_raw)
       header.append(header_clean)
       
-pprint(racer_list) #print race results to the console
+#pprint(racer_list) #print race results to the console
+
+
+#save to file in JSON format with pretty print indentation
+with open("BackCoveResults", "w") as jsonfile:
+  json.dump(racer_list, jsonfile, indent=4)
 
 """
-#save in JSON format
-with open("FalmouthMemorialLibrary", "w") as jsonfile:
-  json.dump(event_list, jsonfile)
-
 #save in CSV format
 myFile = open('FalmouthMemorialLib.csv', 'w')
 writer = csv.writer(myFile)
