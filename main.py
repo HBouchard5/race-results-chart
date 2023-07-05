@@ -53,9 +53,7 @@ for row in rows:
 
   #special case for header row
   else: 
-    print("header row")
     header_cells = row.find_all("th")
-
     #clean header text with regex and save in a header array
     for cell in header_cells:
       header_text_raw = cell.get_text()
@@ -69,21 +67,20 @@ for row in rows:
 with open("BackCoveResults", "w") as jsonfile:
   json.dump(racer_list, jsonfile, indent=4)
 
-"""
-#save in CSV format
-myFile = open('FalmouthMemorialLib.csv', 'w')
+
+#save to file in CSV format
+myFile = open('BackCove5k.csv', 'w')
 writer = csv.writer(myFile)
-writer.writerow(['event_name', 'event_date', 'year', 'event_time', 'event_place', 'event_location', 'event_link'])
-for dictionary in event_list:
-    writer.writerow(dictionary.values())
+writer.writerow(['finish_place', 'runner_name', 'bib', 'time'])
+for racer in racer_list:
+    writer.writerow(racer.values())
 myFile.close()
-"""
+
 
 #read CSV file
-'''
-myFile = open('FalmouthMemorialLib.csv', 'r')
+myFile = open('BackCove5k.csv', 'r')
 print("The content of the csv file is:")
 print(myFile.read())
 myFile.close()
-'''
+
 
