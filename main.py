@@ -11,8 +11,9 @@ event = "Back Cove 5k Series"
 location = "Portland, ME"
 source_URL = "https://backcove.runtowin.com/index.php"
 
-#create empty list to hold all racers
+#create empty lists for racer data and table headers
 racer_list = []
+header = []
 
 #save all HTML from URL into variable "r"
 r = requests.get(source_URL)
@@ -33,18 +34,35 @@ for row in rows:
   
   if len(cells) > 0:
     data = {} #dictionary for racer details
-    data["finish_place"] = cells[0].get_text()
-    data["finish_time"] = cells[2].get_text()
-    data["bib"] = cells[4].get_text()
-    data["runner_name"] = cells[6].get_text()
+    cells_clean = [] #for regex cleaned up text
+
+    #clean text; remove leading and trailing whitespace
+    for cell in cells:
+      raw_text = cell.get_text()
+      clean_text = re.sub(r'^\s+|\s+$', "", raw_text)
+      cells_clean.append(clean_text)
+
+    #pull racer data from cleaned up cell text
+    data["finish_place"] = cells_clean[0]
+    data["finish_time"] = cells_clean[2]
+    data["bib"] = cells_clean[4]
+    data["runner_name"] = cells_clean[6]
 
     #add racer details (dictionary) to racer_list (array)
     racer_list.append(data)  
-  else:
-    print("header row")
-      
-pprint(racer_list) 
 
+  #special case for header row
+  else: 
+    print("header row")
+    header_cells = row.find_all("th")
+
+    #clean header text with regex and save in a header array
+    for cell in header_cells:
+      header_text_raw = cell.get_text()
+      header_clean = re.sub(r'^\s+|\s+$', "", header_text_raw)
+      header.append(header_clean)
+      
+pprint(racer_list) #print race results to the console
 
 """
 #save in JSON format
