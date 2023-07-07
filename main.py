@@ -69,9 +69,9 @@ with open("BackCoveResults", "w") as jsonfile:
 
 
 #save to file in CSV format
-myFile = open('BackCove5k.csv', 'w')
+myFile = open('BackCove5k.csv', 'w', newline='')
 writer = csv.writer(myFile)
-writer.writerow(['finish_place', 'runner_name', 'bib', 'time'])
+writer.writerow(['finish_place', 'time', 'bib', 'runner_name'])
 for racer in racer_list:
     writer.writerow(racer.values())
 myFile.close()
