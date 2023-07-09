@@ -81,24 +81,16 @@
       }
     },
     series: [{
+      //data: timeArray
+      
       data: [
-        [0, Date.UTC(2022, 0, 1, 11, 0, 0)],
-        [1, Date.UTC(2022, 0, 1, 11, 0, 0)],
-        [2, Date.UTC(2022, 0, 1, 12, 0, 0)],
-        [3, Date.UTC(2022, 0, 1, 13, 0, 0)],
-        [4, Date.UTC(2022, 0, 1, 14, 0, 0)]
+        [Date.UTC(2022, 0, 1, 11, 22, 33)],
+        [Date.UTC(2022, 0, 1, 11, 24, 59)],
+        [Date.UTC(2022, 0, 1, 12, 0, 0)],
+        [Date.UTC(2022, 0, 1, 13, 0, 0)],
+        [Date.UTC(2022, 0, 1, 14, 0, 0)]
       ]
+      
     }]
   });
-  
-  /*
-  //convert time in hh:mm:ss to Date()
-  var timeParts = timeString.split(':');
-  var hours = parseInt(timeParts[0]);
-  var minutes = parseInt(timeParts[1]);
-  var seconds = parseInt(timeParts[2]);
-  
-  // Create a new Date object
-  var date = new Date(0, 0, 0, hours, minutes, seconds);
-  */
   
