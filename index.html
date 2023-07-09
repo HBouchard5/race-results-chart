@@ -31,14 +31,55 @@
   <p>Hello world! This is HTML5 Boilerplate.</p>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  
+  <!-- Include PapaParse Library--> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
+  <!-- Main JS File -->
+  <script src="js/main.js"></script>
+  
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+  <!-- Highcharts CDN -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description">
+          Chart showing how Highcharts can automatically compute a histogram from
+          source data. In this chart, the source data is also displayed as a
+          scatter plot.
+      </p>
+  </figure>
+
+  <figure class="highcharts-figure">
+    <div id="container2"></div>
+    <p class="highcharts-description">
+        Edited chart.
+    </p>
+  </figure>
+  <!-- Chart Details -->
+  <script src="js/chart_stuff.js"></script>
+  
+
+  <!-- Select CSV File in browser -->
+  <input type="file" onchange=read(this)>
+  <div class="output"></div>
+
+  
+
+  
+ 
+
 </body>
 
 </html>

@@ -2,6 +2,9 @@ from highcharts_core.highcharts import SharedOptions
 from highcharts_core.highcharts import Chart
 from highcharts_core.options.series.bar import BarSeries
 
+from highcharts_core.options.plot_options.histogram import HistogramOptions
+from highcharts_core.options.series.histogram import HistogramSeries
+
 #get standardized chart options from highcharts_config
 my_shared_options = SharedOptions.from_js_literal('highcharts_config/shared_options.js')
 #creates javascript code snippet
@@ -25,3 +28,10 @@ type_2_chart.add_series(BarSeries.from_csv('../../project_resources/data_files/d
 #creates javascript code snippet
 type_1_chart_js = type_1_chart.to_js_literal()
 type_2_chart_js = type_2_chart.to_js_literal()
+
+my_series = HistogramSeries.from_csv('BackCove5k.csv',
+    property_column_map = {
+        'x': 0,
+        'y': 3,
+        'id': 'id'
+    })
