@@ -2,7 +2,9 @@
 
 //Read contents of CSV file
 const reader = new FileReader()
-let timeArray = [
+let timeArray = []
+/*
+[
   Date.UTC(2022, 0, 1, 0, 28, 36),
   Date.UTC(2022, 0, 1, 0, 29, 21),
   Date.UTC(2022, 0, 1, 0, 30, 15),
@@ -10,6 +12,7 @@ let timeArray = [
   Date.UTC(2022, 0, 1, 0, 32, 24)
 ]
 console.log(timeArray)
+*/
 
 //Select file
 function read(input) {
@@ -38,10 +41,9 @@ reader.onload = function (e) {
     let min = parseInt(splitTime[1])
     let sec = parseInt(splitTime[2])
     
-    let timeData = new Date()
-    timeData.setHours(hours)
-    timeData.setMinutes(min)
-    timeData.setSeconds(sec)
+    let timeData = Date.UTC(1970, 0, 1, hours, min, sec)
+    console.log(timeData)
+    console.log(typeof(timeData))
 
     timeArray.push(timeData)
     
