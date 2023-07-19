@@ -61,36 +61,5 @@
     }]
   });
   
-  Highcharts.chart('container2', {
-    chart: {
-      type: 'scatter'
-    },
-    yAxis: {
-      type: 'datetime',
-      dateTimeLabelFormats: {
-        second: '%H:%M:%S',
-        minute: '%H:%M:%S',
-        hour: '%H:%M:%S',
-        day: '%H:%M:%S',
-        week: '%H:%M:%S',
-        month: '%H:%M:%S',
-        year: '%H:%M:%S'
-      },
-      title: {
-        text: 'Time'
-      }
-    },
-    series: [{
-      //data: timeArray
-      
-      data: [
-        [Date.UTC(2022, 0, 1, 11, 22, 33)],
-        [Date.UTC(2022, 0, 1, 11, 24, 59)],
-        [Date.UTC(2022, 0, 1, 12, 0, 0)],
-        [Date.UTC(2022, 0, 1, 13, 0, 0)],
-        [Date.UTC(2022, 0, 1, 14, 0, 0)]
-      ]
-      
-    }]
-  });
+  
   

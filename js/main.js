@@ -2,17 +2,8 @@
 
 //Read contents of CSV file
 const reader = new FileReader()
-let timeArray = []
-/*
-[
-  Date.UTC(2022, 0, 1, 0, 28, 36),
-  Date.UTC(2022, 0, 1, 0, 29, 21),
-  Date.UTC(2022, 0, 1, 0, 30, 15),
-  Date.UTC(2022, 0, 1, 0, 31, 55),
-  Date.UTC(2022, 0, 1, 0, 32, 24)
-]
-console.log(timeArray)
-*/
+let timeArray = [] //For histogram dataset
+let percentileArray = [] //For plotting percentile vs. finish time
 
 //Select file
 function read(input) {
@@ -32,60 +23,101 @@ reader.onload = function (e) {
 
   //loop through data array
   let dataLen = data.length
-  //let timeArray = []
+
   for (let i = 0; i < (dataLen-1); i++) {
+    let percentilePair = []
+
+    finishPlace = data[i].finish_place
+    console.log(finishPlace)
+
     runnerTime = data[i].time
-    
     splitTime = runnerTime.split(":")
     let hours = parseInt(splitTime[0])
     let min = parseInt(splitTime[1])
     let sec = parseInt(splitTime[2])
     
-    let timeData = Date.UTC(1970, 0, 1, hours, min, sec)
-    console.log(timeData)
-    console.log(typeof(timeData))
+    let finishTime = Date.UTC(1970, 0, 1, hours, min, sec)
+    timeArray.push(finishTime)
 
-    timeArray.push(timeData)
+    percentilePair.push(finishTime)
+    percentilePair.push(finishPlace)
+    console.log(percentilePair)
+
+    percentileArray.push(percentilePair)
     
   }
-  console.log(timeArray)
 
   Highcharts.chart('container3', {
-    chart: {
-      type: 'scatter'
+    title: {
+        text: 'Highcharts Race Data Histogram'
     },
-    yAxis: {
-      type: 'datetime',
-      dateTimeLabelFormats: {
-        second: '%H:%M:%S',
-        minute: '%H:%M:%S',
-        hour: '%H:%M:%S',
-        day: '%H:%M:%S',
-        week: '%H:%M:%S',
-        month: '%H:%M:%S',
-        year: '%H:%M:%S'
-      },
-      title: {
-        text: 'Time'
+    xAxis: [{
+        title: { text: 'Data Point' },
+        alignTicks: false,
+        type: 'datetime',
+        opposite: true
+    }, {
+        title: { text: 'Histogram' },
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%M:%S',
+          minute: '%M:%S',
+          hour: '%M:%S',
+          day: '%M:%S',
+          week: '%M:%S',
+          month: '%M:%S',
+          year: '%M:%S'
+        },
+        alignTicks: false,
+        opposite: false,
+        tickInterval: 2*60*1000
+    }],
+    tooltip: {
+      xDateFormat: '%H:%M:%S'
+    },
+    yAxis: [{
+      title: { 
+        text: 'Percent' 
+      }
+    }, {
+      title: { text: 'Histogram' },
+      opposite: true
+    }],
+
+    plotOptions: {
+      histogram: {
+          accessibility: {
+              point: {
+                  valueDescriptionFormat: '{index}. {point.x:.3f} to {point.x2:.3f}, {point.y}.'
+              }
+          }
       }
     },
-    series: [{
-      data: timeArray
 
-      /*
-      data: [
-        [Date.UTC(2022, 0, 1, 11, 0, 0)],
-        [Date.UTC(2022, 0, 1, 11, 0, 0)],
-        [Date.UTC(2022, 0, 1, 12, 0, 0)],
-        [Date.UTC(2022, 0, 1, 13, 0, 0)],
-        [Date.UTC(2022, 0, 1, 14, 0, 0)]
-      ]
-      */
-      
+    series: [{
+      name: 'Histogram',
+      type: 'histogram',
+      binsNumber: 30,
+      pointInterval: 2*60*1000, // two minute intervals
+      pointStart: 16*60*1000, // start at 16 min
+      pointPlacement: 'between',
+      xAxis: 1,
+      yAxis: 1,
+      baseSeries: 's1',
+      zIndex: -1,
+      tooltip: {
+        xDateFormat: '%H:%M:%S'
+      }
+    }, {
+      name: 'Data',
+      type: 'scatter',
+      data: timeArray,
+      id: 's1',
+      marker: {
+        radius: 1
+      }
     }]
   });
-
-  
 
 }
 
