@@ -25,10 +25,10 @@ reader.onload = function (e) {
   let dataLen = data.length
 
   for (let i = 0; i < (dataLen-1); i++) {
+    let finishTimePair = []
     let percentilePair = []
 
     finishPlace = data[i].finish_place
-    console.log(finishPlace)
 
     runnerTime = data[i].time
     splitTime = runnerTime.split(":")
@@ -37,12 +37,13 @@ reader.onload = function (e) {
     let sec = parseInt(splitTime[2])
     
     let finishTime = Date.UTC(1970, 0, 1, hours, min, sec)
-    timeArray.push(finishTime)
+    
+    finishTimePair.push(finishTime)
+    finishTimePair.push(finishTime)
+    timeArray.push(finishTimePair)
 
     percentilePair.push(finishTime)
-    percentilePair.push(finishPlace)
-    console.log(percentilePair)
-
+    percentilePair.push(finishPlace/172*100)
     percentileArray.push(percentilePair)
     
   }
@@ -52,10 +53,10 @@ reader.onload = function (e) {
         text: 'Highcharts Race Data Histogram'
     },
     xAxis: [{
-        title: { text: 'Data Point' },
+        title: { text: 'Time' },
         alignTicks: false,
         type: 'datetime',
-        opposite: true
+        opposite: true,
     }, {
         title: { text: 'Histogram' },
         type: 'datetime',
@@ -77,8 +78,9 @@ reader.onload = function (e) {
     },
     yAxis: [{
       title: { 
-        text: 'Percent' 
-      }
+        text: 'Finish Time' 
+      },
+      type: 'datetime'
     }, {
       title: { text: 'Histogram' },
       opposite: true
@@ -113,6 +115,46 @@ reader.onload = function (e) {
       type: 'scatter',
       data: timeArray,
       id: 's1',
+      marker: {
+        radius: 1
+      }
+    }]
+  });
+
+  Highcharts.chart('container4', {
+    title: {
+        text: 'Highcharts Race Data Percentiles'
+    },
+    xAxis: [{
+        title: { text: 'Finish Time' },
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%M:%S',
+          minute: '%M:%S',
+          hour: '%M:%S',
+          day: '%M:%S',
+          week: '%M:%S',
+          month: '%M:%S',
+          year: '%M:%S'
+        },
+        alignTicks: false,
+        tickInterval: 2*60*1000
+    }],
+
+    tooltip: {
+      xDateFormat: '%H:%M:%S'
+    },
+
+    yAxis: [{
+      title: { 
+        text: 'Finisher Percentile' 
+      },
+    }],
+
+    series: [{
+      name: 'Data',
+      type: 'scatter',
+      data: percentileArray,
       marker: {
         radius: 1
       }
