@@ -48,41 +48,38 @@ reader.onload = function (e) {
     
   }
 
-  Highcharts.chart('container3', {
+  //Chart options for Finish Time Histogram
+  Highcharts.chart('histogram', {
     title: {
-        text: 'Highcharts Race Data Histogram'
+        text: 'Finish Times with Histogram'
     },
     xAxis: [{
-        title: { text: 'Time' },
+        title: null,
         alignTicks: false,
         type: 'datetime',
         opposite: true,
+        min: 15*60*1000
     }, {
-        title: { text: 'Histogram' },
+        title: null,
         type: 'datetime',
-        dateTimeLabelFormats: {
-          second: '%M:%S',
-          minute: '%M:%S',
-          hour: '%M:%S',
-          day: '%M:%S',
-          week: '%M:%S',
-          month: '%M:%S',
-          year: '%M:%S'
-        },
+        //dateTimeLabelFormats: { }, 
         alignTicks: false,
-        opposite: false,
-        tickInterval: 2*60*1000
+        min: 15*60*1000,
+        //max: 60*60*1000,
+        //crossing: 15*60*1000,
+        //tickInterval: 3*60*1000
     }],
     tooltip: {
       xDateFormat: '%H:%M:%S'
     },
     yAxis: [{
-      title: { 
-        text: 'Finish Time' 
-      },
-      type: 'datetime'
+      title: { text: 'Finish Time (HH:MM)' },
+      type: 'datetime',
+      min: 15*60*1000,
+      //max: 60*60*1000,
+      //crossing: 15*60*1000,
     }, {
-      title: { text: 'Histogram' },
+      title: { text: 'Bin Count' },
       opposite: true
     }],
 
@@ -100,8 +97,8 @@ reader.onload = function (e) {
       name: 'Histogram',
       type: 'histogram',
       binsNumber: 30,
-      pointInterval: 2*60*1000, // two minute intervals
-      pointStart: 16*60*1000, // start at 16 min
+      //pointInterval: 3*60*1000, // three minute intervals
+      //pointStart: 15*60*1000, // start at 15 min
       pointPlacement: 'between',
       xAxis: 1,
       yAxis: 1,
@@ -111,7 +108,7 @@ reader.onload = function (e) {
         xDateFormat: '%H:%M:%S'
       }
     }, {
-      name: 'Data',
+      name: 'Finish Times',
       type: 'scatter',
       data: timeArray,
       id: 's1',
@@ -121,24 +118,19 @@ reader.onload = function (e) {
     }]
   });
 
-  Highcharts.chart('container4', {
+  Highcharts.chart('percentile-chart', {
     title: {
-        text: 'Highcharts Race Data Percentiles'
+        text: 'Finisher Percentiles'
     },
     xAxis: [{
-        title: { text: 'Finish Time' },
+        title: { text: 'Finish Time (HH:MM)' },
         type: 'datetime',
-        dateTimeLabelFormats: {
-          second: '%M:%S',
-          minute: '%M:%S',
-          hour: '%M:%S',
-          day: '%M:%S',
-          week: '%M:%S',
-          month: '%M:%S',
-          year: '%M:%S'
-        },
+        //dateTimeLabelFormats: { },
         alignTicks: false,
-        tickInterval: 2*60*1000
+        min: 15*60*1000,
+        //max: 60*60*1000,
+        //crossing: 15*60*1000,
+        //tickInterval: 3*60*1000
     }],
 
     tooltip: {
@@ -147,12 +139,12 @@ reader.onload = function (e) {
 
     yAxis: [{
       title: { 
-        text: 'Finisher Percentile' 
+        text: 'Percentile (%)' 
       },
     }],
 
     series: [{
-      name: 'Data',
+      name: 'Finishers',
       type: 'scatter',
       data: percentileArray,
       marker: {
