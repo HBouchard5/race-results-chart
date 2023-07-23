@@ -54,34 +54,35 @@ reader.onload = function (e) {
         text: 'Finish Times with Histogram'
     },
     xAxis: [{
-        title: null,
-        alignTicks: false,
         type: 'datetime',
         opposite: true,
-        min: 15*60*1000
+        min: 15*60*1000,
+        visible: false
     }, {
         title: null,
         type: 'datetime',
         //dateTimeLabelFormats: { }, 
         alignTicks: false,
         min: 15*60*1000,
-        //max: 60*60*1000,
-        //crossing: 15*60*1000,
-        //tickInterval: 3*60*1000
     }],
-    tooltip: {
-      xDateFormat: '%H:%M:%S'
-    },
     yAxis: [{
       title: { text: 'Finish Time (HH:MM)' },
       type: 'datetime',
       min: 15*60*1000,
-      //max: 60*60*1000,
-      //crossing: 15*60*1000,
+      gridLineWidth: 0,
+      opposite: true,
     }, {
       title: { text: 'Bin Count' },
-      opposite: true
     }],
+    tooltip: {
+      xDateFormat: '%M:%S',
+      useHTML: true,
+      headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
+      pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+            '<td style="text-align: right"><b>{point.y} </b></td></tr>',
+      footerFormat: '</table>',
+    },
+
 
     plotOptions: {
       histogram: {
@@ -104,9 +105,6 @@ reader.onload = function (e) {
       yAxis: 1,
       baseSeries: 's1',
       zIndex: -1,
-      tooltip: {
-        xDateFormat: '%H:%M:%S'
-      }
     }, {
       name: 'Finish Times',
       type: 'scatter',
@@ -125,23 +123,23 @@ reader.onload = function (e) {
     xAxis: [{
         title: { text: 'Finish Time (HH:MM)' },
         type: 'datetime',
-        //dateTimeLabelFormats: { },
-        alignTicks: false,
         min: 15*60*1000,
-        //max: 60*60*1000,
-        //crossing: 15*60*1000,
-        //tickInterval: 3*60*1000
     }],
-
-    tooltip: {
-      xDateFormat: '%H:%M:%S'
-    },
-
     yAxis: [{
       title: { 
         text: 'Percentile (%)' 
       },
     }],
+    tooltip: {
+      xDateFormat: '%H:%M:%S',
+      useHTML: true,
+      headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
+      pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+            '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
+      footerFormat: '</table>',
+      valueDecimals: 0,
+      //valueSuffix: '%'
+    },
 
     series: [{
       name: 'Finishers',
