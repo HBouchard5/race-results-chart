@@ -32,9 +32,10 @@ rows = table.find_all("tr")
 for row in rows:
   cells = row.find_all("td")
   
-  if len(cells) > 0:
+  if len(cells) > 0: #if it is not the header row
     data = {} #dictionary for racer details
     cells_clean = [] #for regex cleaned up text
+    gender = '' #racer gender
 
     #clean text; remove leading and trailing whitespace
     for cell in cells:
@@ -42,11 +43,21 @@ for row in rows:
       clean_text = re.sub(r'^\s+|\s+$', "", raw_text)
       cells_clean.append(clean_text)
 
+      #check for <a> and <span> elements, which contain gender info
+      a = cell.find("a")
+      if a:
+        span = a.find("span")
+        if "female" in span["class"]:
+          gender = "female"
+        else:
+          gender = "male"
+
     #pull racer data from cleaned up cell text
     data["finish_place"] = cells_clean[0]
     data["finish_time"] = cells_clean[2]
     data["bib"] = cells_clean[4]
     data["runner_name"] = cells_clean[6]
+    data["gender"] = gender
 
     #add racer details (dictionary) to racer_list (array)
     racer_list.append(data)  
@@ -60,9 +71,6 @@ for row in rows:
       header_clean = re.sub(r'^\s+|\s+$', "", header_text_raw)
       header.append(header_clean)
       
-#pprint(racer_list) #print race results to the console
-
-
 #save to file in JSON format with pretty print indentation
 with open("BackCoveResults", "w") as jsonfile:
   json.dump(racer_list, jsonfile, indent=4)
@@ -71,7 +79,7 @@ with open("BackCoveResults", "w") as jsonfile:
 #save to file in CSV format
 myFile = open('BackCove5k.csv', 'w', newline='')
 writer = csv.writer(myFile)
-writer.writerow(['finish_place', 'time', 'bib', 'runner_name'])
+writer.writerow(['finish_place', 'time', 'bib', 'runner_name', 'gender'])
 for racer in racer_list:
     writer.writerow(racer.values())
 myFile.close()
