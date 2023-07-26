@@ -1,13 +1,10 @@
 
 //Define variables
 let reader = new FileReader()
-//let timeArray = [] //For histogram dataset
-//let percentileArray = [] //For plotting percentile vs. finish time
-
-let timesMale = []
-let timesFemale = []
-let percentileMale = []
-let percentileFemale = []
+let timesMale = []    //Finish Times series for M
+let timesFemale = []    //Finish Times series for F
+let percentileMale = []   //Finish Percentiles series for M
+let percentileFemale = []   //Finish Percentiles series for F
 
 //Define function to convert finish time to UTC
 function convertTime(time) {
@@ -16,6 +13,14 @@ function convertTime(time) {
   let min = parseInt(splitTime[1])
   let sec = parseInt(splitTime[2])
   return Date.UTC(1970, 0, 1, hours, min, sec)
+}
+
+//Define function to add an (x,y) data point to an array
+function addDataPoint(x,y,series) {
+  let dataPoint = []
+  dataPoint.push(x)
+  dataPoint.push(y)
+  series.push(dataPoint)
 }
 
 //Define function to read CSV file
@@ -31,49 +36,38 @@ reader.onload = function (e) {
   const parsedData = Papa.parse(csvData, { header: true });
   const runners = parsedData.data; //array of runner data after header row
 
-  //loop through runner array
+  //loop to count total number of male and female runners
   let numRunnersM = 0
   let numRunnersF = 0
-
+  let numUnknownRunners = 0
   for (let i in runners) {
-    console.log(runners[i].gender)
-    
-    //define some variables
-    let finishTimePair = []
-    let percentilePair = []
-
-    //get runner finish place
-    console.log(runners[i].finish_place)
-    finishPlace = runners[i].finish_place
-
-    //convert finish time to UTC
-    runnerTime = runners[i].time
-    let timeUTC = convertTime(runnerTime)
-    //save finish time twice for (x,y) scatterplot
-    finishTimePair.push(timeUTC)
-    finishTimePair.push(timeUTC)
-
-    //Calculate percentile and save (finish time, percentile)
-    percentilePair.push(timeUTC)
-    percentilePair.push(finishPlace/178*100) //this formula should use variables
-
-    //sort by gender
+    //check for gender
     if (runners[i].gender == "male") {
-      numRunnersM = numRunnersM++ //count Male runners  
-      timesMale.push(finishTimePair)
-      percentileMale.push(percentilePair)
-
+      numRunnersM++ //count Male runners
     } else if (runners[i].gender == "female") {
-      numRunnersF = numRunnersF++ //count Female runners
-      timesFemale.push(finishTimePair)
-      percentileFemale.push(percentilePair)
+      numRunnersF++ //count Female runners
+    } else {
+      numUnknownRunners++  //count unknown runners
+    }
+  }
+ 
+  let finishPlaceM = 0
+  let finishPlaceF = 0
+  for (let i in runners) {     
+    timeUTC = convertTime(runners[i].time)  //get runner finish Time
+    //finishPlace = runners[i].finish_place //get runner finish place
+    //sort results by gender
+    if (runners[i].gender == "male") {
+      finishPlaceM++
+      addDataPoint(timeUTC, timeUTC, timesMale)
+      addDataPoint(timeUTC, finishPlaceM/numRunnersM*100, percentileMale)
+    } else if (runners[i].gender == "female") {
+      finishPlaceF++
+      addDataPoint(timeUTC, timeUTC, timesFemale)
+      addDataPoint(timeUTC, finishPlaceF/numRunnersF*100, percentileFemale)
     }
   }
 
-  console.log(timesMale)
-  console.log(timesFemale)
-  console.log(percentileMale)
-  console.log(percentileFemale)
   
   //Chart options for Finish Time Histogram
   let histChart = Highcharts.chart('histogram', {
@@ -111,6 +105,15 @@ reader.onload = function (e) {
       footerFormat: '</table>',
     },
 
+    //legend options
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      floating: true,
+      verticalAlign: 'middle',
+      x: -100,
+    },
+
     //accessibility options for histogram
     plotOptions: {
       histogram: {
@@ -127,6 +130,7 @@ reader.onload = function (e) {
     series: [{
       name: 'Histogram',
       type: 'histogram',
+      color: '#FF0000',
       binsNumber: 30,
       //pointInterval: 3*60*1000, // three minute intervals
       //pointStart: 15*60*1000, // start at 15 min
@@ -138,6 +142,7 @@ reader.onload = function (e) {
     }, {
       name: 'Finish Times',
       type: 'scatter',
+      color: 'black',
       data: timesMale,
       id: 's1',
       marker: {
@@ -145,6 +150,7 @@ reader.onload = function (e) {
       }
     }]
   });
+
 
   //Chart showing finish percentile vs finish time
   let percentChart = Highcharts.chart('percentile-chart', {
@@ -156,6 +162,7 @@ reader.onload = function (e) {
     }],
     yAxis: [{
       title: { text: 'Percentile (%)' },
+      max: 100,
     }],
     //tooltip HTML formatting for percentile scatterplot
     tooltip: {
@@ -165,14 +172,22 @@ reader.onload = function (e) {
       pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
             '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
       footerFormat: '</table>',
-      valueDecimals: 0,
-      //valueSuffix: '%'
+      valueDecimals: 0
+    },
+    //legend options
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      floating: true,
+      verticalAlign: 'middle',
+      x: -50,
     },
 
     //definition of data series for percentile chart
     series: [{
       name: 'Finishers',
       type: 'scatter',
+      color: '#0000FF',
       data: percentileMale,
       marker: {
         radius: 1
