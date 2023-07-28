@@ -1,4 +1,5 @@
 
+
 //Define variables
 let reader = new FileReader()
 let timesMale = []    //Finish Times series for M
@@ -68,162 +69,74 @@ reader.onload = function (e) {
     }
   }
   
-  //Chart options for Finish Time Histogram
-  let histChart = Highcharts.chart('histogram', {
-    title: { text: 'Finish Times with Histogram' },
-    xAxis: [{
-        //invisible scatterplot x-axis opposite main x-axis
-        type: 'datetime',
-        opposite: true,
-        min: 15*60*1000,
-        visible: false
-    }, {
-        //histogram x-axis for finish time
-        type: 'datetime',
-        title: { text: 'Finish Time (HH:MM)' },
-        min: 15*60*1000,  
-    }],
-    yAxis: [{
-      //scatterplot y-axis for Finish Time
-      type: 'datetime',
-      min: 15*60*1000,
-      gridLineWidth: 0,
-      opposite: true,
-      visible: false
-    }, {
-      //histogram y-axis 
-      title: { text: 'Bin Count' },
-    }],
-    //tooltip formatting for histogram and scatterplot using HTML
-    tooltip: {
-      xDateFormat: '%M:%S',
-      useHTML: true,
-      headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-      pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-            '<td style="text-align: right"><b>{point.y} </b></td></tr>',
-      footerFormat: '</table>',
-    },
-
-    //legend options
-    legend: {
-      layout: 'vertical',
-      align: 'right',
-      floating: true,
-      verticalAlign: 'middle',
-      x: -100,
-    },
-
-    //accessibility options for histogram
-    plotOptions: {
-      histogram: {
-          accessibility: {
-              point: {
-                  valueDescriptionFormat: '{index}. {point.x:.3f} to {point.x2:.3f}, {point.y}.'
-              }
-          }
-      }
-    },
-
-    //definition of data series to plot - array of data series
-    //Highcharts.chart.series??
-    series: [{
-      name: 'Histogram M',
-      type: 'histogram',
-      color: '#0000FF',
-      opacity: 0.9,
-      binsNumber: 30,
-      //pointInterval: 3*60*1000, // three minute intervals
-      pointPlacement: 'between',
-      xAxis: 1,
-      yAxis: 1,
-      baseSeries: 's1',
-      zIndex: -1,
-    }, {
-      name: 'Finish Times M',
-      type: 'scatter',
-      color: '#000000',
-      visible: false,
-      data: timesMale,  //data array from variable
-      id: 's1',
-      marker: {
-        radius: 1
-      }
-    }, {
-      name: 'Histogram F',
-      type: 'histogram',
-      color: '#FF0000',
-      opacity: 0.9,
-      binsNumber: 30,
-      //pointInterval: 3*60*1000, // three minute intervals
-      pointPlacement: 'between',
-      xAxis: 1,
-      yAxis: 1,
-      baseSeries: 's2',
-      zIndex: -1,
-    }, {
-      name: 'Finish Times F',
-      type: 'scatter',
-      color: '#3d2254',
-      visible: false,
-      data: timesFemale,  //data array from variable
-      id: 's2',
-      marker: {
-        radius: 1
-      }
+  //Add series data to histogram chart
+  histChart.addSeries({
+    name: 'Histogram M',
+    type: 'histogram',
+    color: '#0000FF',
+    opacity: 0.9,
+    binsNumber: 30,
+    //pointInterval: 3*60*1000, // three minute intervals
+    pointPlacement: 'between',
+    xAxis: 1,
+    yAxis: 1,
+    baseSeries: 's1',
+    zIndex: -1,
+  })
+  histChart.addSeries({
+    name: 'Finish Times M',
+    type: 'scatter',
+    color: '#000000',
+    visible: false,
+    data: timesMale,  //data array from variable
+    id: 's1',
+    marker: {
+      radius: 1
     }
-    ]
-  });
-
-  //Chart showing finish percentile vs finish time
-  let percentChart = Highcharts.chart('percentile-chart', {
-    title: { text: 'Finisher Percentiles' },
-    xAxis: [{
-        title: { text: 'Finish Time (HH:MM)' },
-        type: 'datetime',
-        min: 15*60*1000,
-    }],
-    yAxis: [{
-      title: { text: 'Percentile (%)' },
-      max: 100,
-    }],
-    //tooltip HTML formatting for percentile scatterplot
-    tooltip: {
-      xDateFormat: '%H:%M:%S',
-      useHTML: true,
-      headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-      pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-            '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
-      footerFormat: '</table>',
-      valueDecimals: 0
-    },
-    //legend options
-    legend: {
-      layout: 'vertical',
-      align: 'right',
-      floating: true,
-      verticalAlign: 'middle',
-      x: -50,
-    },
-
-    //definition of data series for percentile chart
-    series: [{
-      name: 'Male',
-      type: 'scatter',
-      color: '#0000FF',
-      data: percentileMale,   //data array variable
-      marker: {
-        radius: 1
-      }
-    }, {
-      name: 'Female',
-      type: 'scatter',
-      color: '#FF0000',
-      data: percentileFemale,   //data array variable
-      marker: {
-        radius: 1
-      }
+  })
+  histChart.addSeries({
+    name: 'Histogram F',
+    type: 'histogram',
+    color: '#FF0000',
+    opacity: 0.9,
+    binsNumber: 30,
+    //pointInterval: 3*60*1000, // three minute intervals
+    pointPlacement: 'between',
+    xAxis: 1,
+    yAxis: 1,
+    baseSeries: 's2',
+    zIndex: -1,
+  })
+  histChart.addSeries({
+    name: 'Finish Times F',
+    type: 'scatter',
+    color: '#3d2254',
+    visible: false,
+    data: timesFemale,  //data array from variable
+    id: 's2',
+    marker: {
+      radius: 1
     }
-    ]
+  })
+  
+  //Add data series to percentile chart
+  percentileChart.addSeries({
+    name: 'Male',
+    type: 'scatter',
+    color: '#0000FF',
+    data: percentileMale,   //data array variable
+    marker: {
+      radius: 1
+    }
+  })
+  percentileChart.addSeries({
+    name: 'Female',
+    type: 'scatter',
+    color: '#FF0000',
+    data: percentileFemale,   //data array variable
+    marker: {
+      radius: 1
+    }
   })
 
 }
