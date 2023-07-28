@@ -58,7 +58,7 @@ reader.onload = function (e) {
     //finishPlace = runners[i].finish_place //get runner finish place
     //sort results by gender
     if (runners[i].gender == "male") {
-      finishPlaceM++
+      finishPlaceM++ 
       addDataPoint(timeUTC, timeUTC, timesMale)
       addDataPoint(timeUTC, finishPlaceM/numRunnersM*100, percentileMale)
     } else if (runners[i].gender == "female") {
@@ -67,7 +67,6 @@ reader.onload = function (e) {
       addDataPoint(timeUTC, finishPlaceF/numRunnersF*100, percentileFemale)
     }
   }
-
   
   //Chart options for Finish Time Histogram
   let histChart = Highcharts.chart('histogram', {
@@ -81,16 +80,16 @@ reader.onload = function (e) {
     }, {
         //histogram x-axis for finish time
         type: 'datetime',
-        min: 15*60*1000, 
-        alignTicks: false,   
+        title: { text: 'Finish Time (HH:MM)' },
+        min: 15*60*1000,  
     }],
     yAxis: [{
       //scatterplot y-axis for Finish Time
-      title: { text: 'Finish Time (HH:MM)' },
       type: 'datetime',
       min: 15*60*1000,
       gridLineWidth: 0,
       opposite: true,
+      visible: false
     }, {
       //histogram y-axis 
       title: { text: 'Bin Count' },
@@ -128,29 +127,52 @@ reader.onload = function (e) {
     //definition of data series to plot - array of data series
     //Highcharts.chart.series??
     series: [{
-      name: 'Histogram',
+      name: 'Histogram M',
       type: 'histogram',
-      color: '#FF0000',
+      color: '#0000FF',
+      opacity: 0.9,
       binsNumber: 30,
       //pointInterval: 3*60*1000, // three minute intervals
-      //pointStart: 15*60*1000, // start at 15 min
       pointPlacement: 'between',
       xAxis: 1,
       yAxis: 1,
       baseSeries: 's1',
       zIndex: -1,
     }, {
-      name: 'Finish Times',
+      name: 'Finish Times M',
       type: 'scatter',
-      color: 'black',
-      data: timesMale,
+      color: '#000000',
+      visible: false,
+      data: timesMale,  //data array from variable
       id: 's1',
       marker: {
         radius: 1
       }
-    }]
+    }, {
+      name: 'Histogram F',
+      type: 'histogram',
+      color: '#FF0000',
+      opacity: 0.9,
+      binsNumber: 30,
+      //pointInterval: 3*60*1000, // three minute intervals
+      pointPlacement: 'between',
+      xAxis: 1,
+      yAxis: 1,
+      baseSeries: 's2',
+      zIndex: -1,
+    }, {
+      name: 'Finish Times F',
+      type: 'scatter',
+      color: '#3d2254',
+      visible: false,
+      data: timesFemale,  //data array from variable
+      id: 's2',
+      marker: {
+        radius: 1
+      }
+    }
+    ]
   });
-
 
   //Chart showing finish percentile vs finish time
   let percentChart = Highcharts.chart('percentile-chart', {
@@ -185,16 +207,23 @@ reader.onload = function (e) {
 
     //definition of data series for percentile chart
     series: [{
-      name: 'Finishers',
+      name: 'Male',
       type: 'scatter',
       color: '#0000FF',
-      data: percentileMale,
+      data: percentileMale,   //data array variable
       marker: {
         radius: 1
       }
-    }]
-  });
+    }, {
+      name: 'Female',
+      type: 'scatter',
+      color: '#FF0000',
+      data: percentileFemale,   //data array variable
+      marker: {
+        radius: 1
+      }
+    }
+    ]
+  })
 
 }
-
-
