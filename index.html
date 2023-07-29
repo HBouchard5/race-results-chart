@@ -25,26 +25,23 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+<body class="flex-container">
+  
+  <!-- JS files-->
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
   
   <!-- Include PapaParse Library--> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="js/main.js"></script>
   
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
-
+  -->
 
   <!-- Highcharts CDN -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -52,120 +49,126 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-   
-  <!-- Select CSV File in browser -->
-  <input type="file" onchange=read(this)>
+  <header class="flex-container">
+    <h1 class="flex-item">Vizzy</h1>
+    <h3 class="flex-item">Data Viz for the Running Wiz</h3>
+  </header>
 
-  <!-- Highcharts data will populate with selected CSV data -->
-  <figure class="highcharts-figure">
-    <div id="histogram"></div>
-    <p class="highcharts-description">
-        Histogram of 5k road race finish time data.
-    </p>
-  </figure>
+  <form class="flex-container">
+      <h4 class="flex-item">Select CSV File containing race results</h4>
+      <!----------------- Button to choose CSV File in browser -------------->
+      <input type="file" onchange=read(this)>
+    </form>
 
-  <script>
-    //Chart options for Finish Time Histogram
-    let histChart = Highcharts.chart('histogram', {
-      title: { text: 'Finish Times with Histogram' },
-      xAxis: [{
-          //invisible scatterplot x-axis opposite main x-axis
+  <main>
+    <!------------------ Finish Time Histogram ------------------------------>
+    <figure class="highcharts-figure">
+      <div id="histogram"></div>
+    </figure>
+
+    <script>     //Initialize options for Finish Time Histogram
+      let histChart = Highcharts.chart('histogram', {
+        title: { text: 'Finish Times with Histogram' },
+        xAxis: [{
+            //invisible scatterplot x-axis opposite main x-axis
+            type: 'datetime',
+            opposite: true,
+            min: 15*60*1000,
+            visible: false
+        }, {
+            //histogram x-axis for finish time
+            type: 'datetime',
+            title: { text: 'Finish Time (HH:MM)' },
+            min: 15*60*1000,  
+        }],
+        yAxis: [{
+          //scatterplot y-axis for Finish Time
           type: 'datetime',
+          min: 15*60*1000,
+          gridLineWidth: 0,
           opposite: true,
-          min: 15*60*1000,
           visible: false
-      }, {
-          //histogram x-axis for finish time
-          type: 'datetime',
-          title: { text: 'Finish Time (HH:MM)' },
-          min: 15*60*1000,  
-      }],
-      yAxis: [{
-        //scatterplot y-axis for Finish Time
-        type: 'datetime',
-        min: 15*60*1000,
-        gridLineWidth: 0,
-        opposite: true,
-        visible: false
-      }, {
-        //histogram y-axis 
-        title: { text: 'Bin Count' },
-      }],
-      //tooltip formatting for histogram and scatterplot using HTML
-      tooltip: {
-        xDateFormat: '%M:%S',
-        useHTML: true,
-        headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-        pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-              '<td style="text-align: right"><b>{point.y} </b></td></tr>',
-        footerFormat: '</table>',
-      },
+        }, {
+          //histogram y-axis 
+          title: { text: 'Bin Count' },
+        }],
+        //tooltip formatting for histogram and scatterplot using HTML
+        tooltip: {
+          xDateFormat: '%M:%S',
+          useHTML: true,
+          headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
+          pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+                '<td style="text-align: right"><b>{point.y} </b></td></tr>',
+          footerFormat: '</table>',
+        },
 
-      //legend options
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        floating: true,
-        verticalAlign: 'middle',
-        x: -100,
-      },
+        //legend options
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          floating: true,
+          verticalAlign: 'middle',
+          x: -100,
+        },
 
-      //accessibility options for histogram
-      plotOptions: {
-        histogram: {
-            accessibility: {
-                point: {
-                    valueDescriptionFormat: '{index}. {point.x:.3f} to {point.x2:.3f}, {point.y}.'
-                }
-            }
+        //accessibility options for histogram
+        plotOptions: {
+          histogram: {
+              accessibility: {
+                  point: {
+                      valueDescriptionFormat: '{index}. {point.x:.3f} to {point.x2:.3f}, {point.y}.'
+                  }
+              }
+          }
+        },
+      })
+    </script>
+
+    <!------------------ Percentile vs. Finish time Scatterplot ------------------->
+    <figure class="highcharts-figure">  
+      <div id="percentile-chart"></div>
+    </figure>
+
+    <script>      //Initialize options for Percentile Scatterplot
+      let percentileChart = Highcharts.chart('percentile-chart', {
+        title: { text: 'Finisher Percentiles' },
+        xAxis: [{
+            title: { text: 'Finish Time (HH:MM)' },
+            type: 'datetime',
+            min: 15*60*1000,
+        }],
+        yAxis: [{
+          title: { text: 'Percentile (%)' },
+          max: 100,
+        }],
+        //tooltip HTML formatting for percentile scatterplot
+        tooltip: {
+          xDateFormat: '%H:%M:%S',
+          useHTML: true,
+          headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
+          pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+                '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
+          footerFormat: '</table>',
+          valueDecimals: 0
+        },
+        //legend options
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          floating: true,
+          verticalAlign: 'middle',
+          x: -50,
         }
-      },
-    })
-  </script>
+      })
+    </script>
 
-  <figure class="highcharts-figure">
-    <div id="percentile-chart"></div>
-    <p class="highcharts-description">
-        Scatterplot of 5k road race percentiles vs finish time.
-    </p>
-  </figure>
+    <!-------------- Selected CSV data gets displayed here --------------------->
+    <div class="output flex-item"></div>
+  </main>
 
-  <script>
-    //Initialize percentile chart
-    let percentileChart = Highcharts.chart('percentile-chart', {
-      title: { text: 'Finisher Percentiles' },
-      xAxis: [{
-          title: { text: 'Finish Time (HH:MM)' },
-          type: 'datetime',
-          min: 15*60*1000,
-      }],
-      yAxis: [{
-        title: { text: 'Percentile (%)' },
-        max: 100,
-      }],
-      //tooltip HTML formatting for percentile scatterplot
-      tooltip: {
-        xDateFormat: '%H:%M:%S',
-        useHTML: true,
-        headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-        pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-              '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
-        footerFormat: '</table>',
-        valueDecimals: 0
-      },
-      //legend options
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        floating: true,
-        verticalAlign: 'middle',
-        x: -50,
-      }
-    })
-  </script>
-
-  <!-- Selected CSV data gets displayed here -->
-  <div class="output"></div>
+  <footer class="flex-container">
+    <p>Copyright 2023 by Vizzy</p>
+  </footer>
   
 </body>
 
