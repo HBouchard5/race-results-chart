@@ -19,8 +19,15 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura&family=Orbitron&family=Montserrat&family=Ysabeau+SC&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css"> 
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/triton.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -49,12 +56,14 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+  <!-- Title and Tagline -->
   <header class="flex-container">
-    <h1 class="flex-item">Vizzy</h1>
-    <h3 class="flex-item">Data Viz for the Running Wiz</h3>
+    <h1 class="flex-item title">VIZZY</h1>
+    <h3 class="flex-item tagline">Data Visualizations for Runners</h3>
   </header>
 
-  <form class="flex-container">
+  <!-- User input form -->
+  <form class="flex-container input-section" >
       <h4 class="flex-item">Select CSV File containing race results</h4>
       <!----------------- Button to choose CSV File in browser -------------->
       <input type="file" onchange=read(this)>

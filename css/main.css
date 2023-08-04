@@ -130,6 +130,9 @@ textarea {
     background: #f1f7ff;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .flex-container {
   display: flex;
@@ -142,6 +145,35 @@ textarea {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.title {
+  font-family: 'tritonitalic';
+  font-weight: normal;
+  font-style: normal;
+  color: orange;
+  font-size: 6em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-family: 'triton_sansregular';
+  color: white;
+  font-size: 3em;
+}
+
+header {
+  border: 1px solid black;
+  background-color: black;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.input-section {
+  border: 1px solid black;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 
