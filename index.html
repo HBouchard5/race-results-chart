@@ -68,19 +68,14 @@
 
     <!-- User input form -->
     <form class="flex-container" id="input-section" >
-      <h4 class="flex-item">Select CSV File containing race results</h4>
+      <p class="flex-item">Select a CSV File containing race results:</p>
       <!----------------- Button to choose CSV File in browser -------------->
-      <div class="flex-item">
-        <input id="csv-button" type="file" onchange=read(this)>
-      </div>
+      <input id="csv-button" type="file" accept=".csv" onchange=read(this)>
     </form>
 
-    <!-- Selected Race Data Info -->
+    <!-- Race Data Info -->
     <section class="flex-container hidden" id="race-info">
       <h2 class="flex-item" id="race-name">Race name goes here</h2>
-      <h2 class="flex-item" id="race-date">Race date</h2>
-      <h4 class="flex-item" id="race-description">Race description</h4>
-      <h4 class="flex-item" id="data-source">Race data source</h4>
     </section>
 
     <!------------------ Finish Time Histogram ------------------------------>

@@ -147,7 +147,15 @@ reader.onload = function (e) {
   })
 
   //hide user input form after CSV file is selected
-  //let inputSection = document.getElementById("input-section")
-  //inputSection.classList.add("hidden")
+  let inputSection = document.getElementById("input-section")
+  inputSection.classList.add("hidden")
+
+  //show CSV file name
+  let dataSection = document.getElementById("race-info")
+  dataSection.classList.remove("hidden")
+  
+  console.log(e.target.files[0].name)
+
+  
 
 }

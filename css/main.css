@@ -135,7 +135,6 @@ body {
 .flex-item {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 header {
@@ -172,9 +171,14 @@ header {
   width: 100%;
 }
 
+p {
+  margin: 0px;
+}
+
 #csv-button {
-  text-align: right;
-  margin-left: 140px;
+  text-align: center;
+  align-items: center;
+  margin-left: 25px;
 }
 
 #race-info {
