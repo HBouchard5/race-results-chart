@@ -69,6 +69,13 @@ reader.onload = function (e) {
     }
   }
   
+  //Show charts in HTML by removing "hidden" class
+  let histContainer = document.getElementById("histogram-container")
+  histContainer.classList.remove("hidden")
+
+  let percentileContainer = document.getElementById("percentile-container")
+  percentileContainer.classList.remove("hidden")
+
   //Add series data to histogram chart
   histChart.addSeries({
     name: 'Histogram M',
@@ -138,5 +145,9 @@ reader.onload = function (e) {
       radius: 1
     }
   })
+
+  //hide user input form after CSV file is selected
+  //let inputSection = document.getElementById("input-section")
+  //inputSection.classList.add("hidden")
 
 }

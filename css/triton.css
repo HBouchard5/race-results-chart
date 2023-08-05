@@ -37,7 +37,8 @@
 
 
 
-
+/* This option renders the same as triton_sansitalic. Perhaps the webkit needs to be 
+recreated (on Font Squirrel) using the woff2 font files instead of the OTF files */
 @font-face {
     font-family: 'triton_sansregular';
     src: url('../fonts/triton-regular-webfont.woff2') format('woff2'),

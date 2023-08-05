@@ -37,10 +37,7 @@ html {
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
+/*A better looking default horizontal rule */
 hr {
   display: block;
   height: 1px;
@@ -55,7 +52,6 @@ hr {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-
 audio,
 canvas,
 iframe,
@@ -65,20 +61,14 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
+/*Remove default fieldset styles. */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
+/* Allow only vertical resizing of textareas. */
 textarea {
   resize: vertical;
 }
@@ -87,48 +77,49 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.highcharts-figure,
-.highcharts-data-table table {
-    min-width: 800px;
-    max-width: 800px;
-    margin: 1em auto;
-}
+/* Highcharts Data Table CSS 
+  .highcharts-data-table table {
+      min-width: 800px;
+      max-width: 800px;
+      margin: 1em auto;
+  }
 
-.highcharts-data-table table {
-    font-family: Verdana, sans-serif;
-    border-collapse: collapse;
-    border: 1px solid #ebebeb;
-    margin: 10px auto;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-}
+  .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #ebebeb;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+  }
 
-.highcharts-data-table caption {
-    padding: 1em 0;
-    font-size: 1.2em;
-    color: #555;
-}
+  .highcharts-data-table caption {
+      padding: 1em 0;
+      font-size: 1.2em;
+      color: #555;
+  }
 
-.highcharts-data-table th {
-    font-weight: 600;
-    padding: 0.5em;
-}
+  .highcharts-data-table th {
+      font-weight: 600;
+      padding: 0.5em;
+  }
 
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-    padding: 0.5em;
-}
+  .highcharts-data-table td,
+  .highcharts-data-table th,
+  .highcharts-data-table caption {
+      padding: 0.5em;
+  }
 
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-    background: #f8f8f8;
-}
+  .highcharts-data-table thead tr,
+  .highcharts-data-table tr:nth-child(even) {
+      background: #f8f8f8;
+  }
 
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+*/
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -147,44 +138,70 @@ body {
   width: 100%;
 }
 
+header {
+  border: 1px solid black;
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .title {
   font-family: 'tritonitalic';
   font-weight: normal;
   font-style: normal;
   color: orange;
-  font-size: 6em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 7em;
+  margin: 0px;
 }
 
 .tagline {
-  font-family: 'triton_sansregular';
+  font-family: 'triton_sansitalic';
+  font-weight: normal;
+  font-style: normal;
   color: white;
-  font-size: 3em;
+  font-size: 2.5em;
+  margin: 0px;
+  text-align: center;
+  width: 90%;
 }
 
-header {
-  border: 1px solid black;
-  background-color: black;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.input-section {
+#input-section {
   border: 1px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
+  width: 100%;
 }
 
+#csv-button {
+  text-align: right;
+  margin-left: 140px;
+}
+
+#race-info {
+  border: 1px solid black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.highcharts-figure {
+  border: 1px solid black;
+  min-width: 800px;
+  max-width: 800px;
+  margin: 1em;
+  margin-top: 50px;
+  padding-top: 25px;
+}
+
+footer {
+  margin: 25px 0;
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
 
-/*
- * Hide visually and from screen readers
- */
-
+/* Hide visually and from screen readers */
 .hidden,
 [hidden] {
   display: none !important;

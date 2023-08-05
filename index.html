@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Vizzy</title>
+  <meta name="description" content="Data Visualizations for Runners">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
 
   <!-- These are Open Graph meta tags used for social media sharing. 
     They provide information such as the title, type, URL, and image 
@@ -15,8 +16,9 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <!-- UPDATE THESE BEFORE RELEASE --> 
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
   <!-- Place favicon.ico in the root directory -->
 
   <!-- Google Fonts -->
@@ -29,49 +31,60 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/triton.css">
 
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body class="flex-container">
-  
   <!-- JS files-->
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-  
-  <!-- Include PapaParse Library--> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-  -->
 
+  <!-- PapaParse Library for reading CSV --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    
   <!-- Highcharts CDN -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-  <!-- Title and Tagline -->
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  -->  
+
+</head>
+
+<body class="flex-container">
+  
+  <!-- Header Section (Title and Tagline) -->
   <header class="flex-container">
     <h1 class="flex-item title">VIZZY</h1>
-    <h3 class="flex-item tagline">Data Visualizations for Runners</h3>
+    <h3 class="flex-item tagline">Data Visualization for Runners</h3>
   </header>
 
-  <!-- User input form -->
-  <form class="flex-container input-section" >
+  <!-- Main Site Content -->
+  <main class="flex-container">
+
+    <!-- User input form -->
+    <form class="flex-container" id="input-section" >
       <h4 class="flex-item">Select CSV File containing race results</h4>
       <!----------------- Button to choose CSV File in browser -------------->
-      <input type="file" onchange=read(this)>
+      <div class="flex-item">
+        <input id="csv-button" type="file" onchange=read(this)>
+      </div>
     </form>
 
-  <main>
+    <!-- Selected Race Data Info -->
+    <section class="flex-container hidden" id="race-info">
+      <h2 class="flex-item" id="race-name">Race name goes here</h2>
+      <h2 class="flex-item" id="race-date">Race date</h2>
+      <h4 class="flex-item" id="race-description">Race description</h4>
+      <h4 class="flex-item" id="data-source">Race data source</h4>
+    </section>
+
     <!------------------ Finish Time Histogram ------------------------------>
-    <figure class="highcharts-figure">
+    <figure id="histogram-container" class="highcharts-figure hidden">
       <div id="histogram"></div>
     </figure>
 
@@ -110,7 +123,10 @@
                 '<td style="text-align: right"><b>{point.y} </b></td></tr>',
           footerFormat: '</table>',
         },
-
+        //change default font-family
+        chart: {
+          style: {"fontFamily": "Montserrat, sans-serif", "fontSize":"1rem"}
+        },
         //legend options
         legend: {
           layout: 'vertical',
@@ -119,7 +135,6 @@
           verticalAlign: 'middle',
           x: -100,
         },
-
         //accessibility options for histogram
         plotOptions: {
           histogram: {
@@ -134,7 +149,7 @@
     </script>
 
     <!------------------ Percentile vs. Finish time Scatterplot ------------------->
-    <figure class="highcharts-figure">  
+    <figure id="percentile-container" class="highcharts-figure hidden">  
       <div id="percentile-chart"></div>
     </figure>
 
@@ -160,6 +175,10 @@
           footerFormat: '</table>',
           valueDecimals: 0
         },
+        //change default font-family
+        chart: {
+          style: {"fontFamily": "Montserrat, sans-serif", "fontSize":"1rem"}
+        },
         //legend options
         legend: {
           layout: 'vertical',
@@ -172,7 +191,7 @@
     </script>
 
     <!-------------- Selected CSV data gets displayed here --------------------->
-    <div class="output flex-item"></div>
+    <div class="output flex-item hidden"></div>
   </main>
 
   <footer class="flex-container">
