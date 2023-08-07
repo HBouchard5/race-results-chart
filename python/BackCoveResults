@@ -1,0 +1,1066 @@
+[
+    {
+        "finish_place": "1",
+        "finish_time": "00:16:28",
+        "bib": "470",
+        "runner_name": "Emily Durgin",
+        "gender": "female"
+    },
+    {
+        "finish_place": "2",
+        "finish_time": "00:17:35",
+        "bib": "360",
+        "runner_name": "Grady Kemp",
+        "gender": "male"
+    },
+    {
+        "finish_place": "3",
+        "finish_time": "00:17:46",
+        "bib": "323",
+        "runner_name": "Andrew Prunk",
+        "gender": "male"
+    },
+    {
+        "finish_place": "4",
+        "finish_time": "00:18:11",
+        "bib": "194",
+        "runner_name": "Martin Duval",
+        "gender": "male"
+    },
+    {
+        "finish_place": "5",
+        "finish_time": "00:18:35",
+        "bib": "14",
+        "runner_name": "Chris Cutler-wood",
+        "gender": "male"
+    },
+    {
+        "finish_place": "6",
+        "finish_time": "00:18:51",
+        "bib": "134",
+        "runner_name": "William Mill",
+        "gender": "male"
+    },
+    {
+        "finish_place": "7",
+        "finish_time": "00:19:01",
+        "bib": "340",
+        "runner_name": "Peter Burke",
+        "gender": "male"
+    },
+    {
+        "finish_place": "8",
+        "finish_time": "00:19:05",
+        "bib": "108",
+        "runner_name": "Christie Barnes",
+        "gender": "female"
+    },
+    {
+        "finish_place": "9",
+        "finish_time": "00:19:32",
+        "bib": "124",
+        "runner_name": "Scott Patterson",
+        "gender": "male"
+    },
+    {
+        "finish_place": "10",
+        "finish_time": "00:19:47",
+        "bib": "394",
+        "runner_name": "Hans Goudey",
+        "gender": "male"
+    },
+    {
+        "finish_place": "11",
+        "finish_time": "00:19:52",
+        "bib": "385",
+        "runner_name": "Jeff Sires",
+        "gender": "male"
+    },
+    {
+        "finish_place": "12",
+        "finish_time": "00:19:55",
+        "bib": "197",
+        "runner_name": "Matthew Drew",
+        "gender": "male"
+    },
+    {
+        "finish_place": "13",
+        "finish_time": "00:20:06",
+        "bib": "277",
+        "runner_name": "Darren Fishell",
+        "gender": "male"
+    },
+    {
+        "finish_place": "14",
+        "finish_time": "00:20:08",
+        "bib": "228",
+        "runner_name": "Brian Way",
+        "gender": "male"
+    },
+    {
+        "finish_place": "15",
+        "finish_time": "00:20:11",
+        "bib": "90",
+        "runner_name": "Jacob Furey",
+        "gender": "male"
+    },
+    {
+        "finish_place": "16",
+        "finish_time": "00:20:24",
+        "bib": "166",
+        "runner_name": "Thacher Carter",
+        "gender": "male"
+    },
+    {
+        "finish_place": "17",
+        "finish_time": "00:20:25",
+        "bib": "348",
+        "runner_name": "Chris Waldman",
+        "gender": "male"
+    },
+    {
+        "finish_place": "18",
+        "finish_time": "00:20:25",
+        "bib": "371",
+        "runner_name": "Jesse Keck",
+        "gender": "male"
+    },
+    {
+        "finish_place": "19",
+        "finish_time": "00:20:29",
+        "bib": "232",
+        "runner_name": "Kalie Dunn",
+        "gender": "female"
+    },
+    {
+        "finish_place": "20",
+        "finish_time": "00:20:31",
+        "bib": "419",
+        "runner_name": "Matt Daniels",
+        "gender": "male"
+    },
+    {
+        "finish_place": "21",
+        "finish_time": "00:20:36",
+        "bib": "157",
+        "runner_name": "Nevin Duffey",
+        "gender": "male"
+    },
+    {
+        "finish_place": "22",
+        "finish_time": "00:20:41",
+        "bib": "3",
+        "runner_name": "Peter Lodge",
+        "gender": "male"
+    },
+    {
+        "finish_place": "23",
+        "finish_time": "00:20:45",
+        "bib": "104",
+        "runner_name": "Mark Eherts",
+        "gender": "male"
+    },
+    {
+        "finish_place": "24",
+        "finish_time": "00:21:01",
+        "bib": "392",
+        "runner_name": "Lydia Gill",
+        "gender": "female"
+    },
+    {
+        "finish_place": "25",
+        "finish_time": "00:21:06",
+        "bib": "342",
+        "runner_name": "Will Lundquist",
+        "gender": "male"
+    },
+    {
+        "finish_place": "26",
+        "finish_time": "00:21:06",
+        "bib": "201",
+        "runner_name": "Kat Duarte",
+        "gender": "female"
+    },
+    {
+        "finish_place": "27",
+        "finish_time": "00:21:07",
+        "bib": "41",
+        "runner_name": "Jesse Bishop",
+        "gender": "male"
+    },
+    {
+        "finish_place": "28",
+        "finish_time": "00:21:11",
+        "bib": "125",
+        "runner_name": "Laura Qualey",
+        "gender": "female"
+    },
+    {
+        "finish_place": "29",
+        "finish_time": "00:21:15",
+        "bib": "261",
+        "runner_name": "Haley Plante",
+        "gender": "female"
+    },
+    {
+        "finish_place": "30",
+        "finish_time": "00:21:20",
+        "bib": "2",
+        "runner_name": "Darren Winchenbach",
+        "gender": "male"
+    },
+    {
+        "finish_place": "31",
+        "finish_time": "00:21:21",
+        "bib": "422",
+        "runner_name": "Rahel Delaney",
+        "gender": "female"
+    },
+    {
+        "finish_place": "32",
+        "finish_time": "00:21:27",
+        "bib": "388",
+        "runner_name": "Lauren Kaija",
+        "gender": "female"
+    },
+    {
+        "finish_place": "33",
+        "finish_time": "00:21:37",
+        "bib": "150",
+        "runner_name": "Alexandra Woodhouse",
+        "gender": "female"
+    },
+    {
+        "finish_place": "34",
+        "finish_time": "00:22:12",
+        "bib": "208",
+        "runner_name": "Patrick Mahoney",
+        "gender": "male"
+    },
+    {
+        "finish_place": "35",
+        "finish_time": "00:22:21",
+        "bib": "177",
+        "runner_name": "Jim Bickford",
+        "gender": "male"
+    },
+    {
+        "finish_place": "36",
+        "finish_time": "00:22:23",
+        "bib": "189",
+        "runner_name": "Peter Dydo",
+        "gender": "male"
+    },
+    {
+        "finish_place": "37",
+        "finish_time": "00:22:25",
+        "bib": "409",
+        "runner_name": "Twain Braden",
+        "gender": "male"
+    },
+    {
+        "finish_place": "38",
+        "finish_time": "00:22:29",
+        "bib": "191",
+        "runner_name": "Hank Andolsek",
+        "gender": "male"
+    },
+    {
+        "finish_place": "39",
+        "finish_time": "00:22:33",
+        "bib": "99",
+        "runner_name": "Alice Sandzen",
+        "gender": "female"
+    },
+    {
+        "finish_place": "40",
+        "finish_time": "00:22:35",
+        "bib": "182",
+        "runner_name": "Jonathan Graham",
+        "gender": "male"
+    },
+    {
+        "finish_place": "41",
+        "finish_time": "00:22:40",
+        "bib": "66",
+        "runner_name": "Tarek Hammour",
+        "gender": "male"
+    },
+    {
+        "finish_place": "42",
+        "finish_time": "00:22:54",
+        "bib": "408",
+        "runner_name": "Karl Gehsmann",
+        "gender": "male"
+    },
+    {
+        "finish_place": "43",
+        "finish_time": "00:22:57",
+        "bib": "435",
+        "runner_name": "Henry Loughlin",
+        "gender": "male"
+    },
+    {
+        "finish_place": "44",
+        "finish_time": "00:23:00",
+        "bib": "162",
+        "runner_name": "Marc Cole",
+        "gender": "male"
+    },
+    {
+        "finish_place": "45",
+        "finish_time": "00:23:19",
+        "bib": "82",
+        "runner_name": "Rebecca Nisetich",
+        "gender": "female"
+    },
+    {
+        "finish_place": "46",
+        "finish_time": "00:23:22",
+        "bib": "316",
+        "runner_name": "Paul Letalien",
+        "gender": "male"
+    },
+    {
+        "finish_place": "47",
+        "finish_time": "00:23:26",
+        "bib": "250",
+        "runner_name": "Bob Zager",
+        "gender": "male"
+    },
+    {
+        "finish_place": "48",
+        "finish_time": "00:23:48",
+        "bib": "242",
+        "runner_name": "Ralph Carmona",
+        "gender": "male"
+    },
+    {
+        "finish_place": "49",
+        "finish_time": "00:23:53",
+        "bib": "249",
+        "runner_name": "Keith Parker",
+        "gender": "male"
+    },
+    {
+        "finish_place": "50",
+        "finish_time": "00:23:56",
+        "bib": "148",
+        "runner_name": "Banton Heithoff",
+        "gender": "male"
+    },
+    {
+        "finish_place": "51",
+        "finish_time": "00:24:01",
+        "bib": "173",
+        "runner_name": "Gregory Lull",
+        "gender": "male"
+    },
+    {
+        "finish_place": "52",
+        "finish_time": "00:24:03",
+        "bib": "251",
+        "runner_name": "Emily Jipson",
+        "gender": "female"
+    },
+    {
+        "finish_place": "53",
+        "finish_time": "00:24:07",
+        "bib": "309",
+        "runner_name": "Ella Vinkemulder",
+        "gender": "female"
+    },
+    {
+        "finish_place": "54",
+        "finish_time": "00:24:15",
+        "bib": "97",
+        "runner_name": "Skylar Harris",
+        "gender": "female"
+    },
+    {
+        "finish_place": "55",
+        "finish_time": "00:24:19",
+        "bib": "207",
+        "runner_name": "Luigi Scarcelli",
+        "gender": "male"
+    },
+    {
+        "finish_place": "56",
+        "finish_time": "00:24:21",
+        "bib": "141",
+        "runner_name": "Neto Campos",
+        "gender": "male"
+    },
+    {
+        "finish_place": "57",
+        "finish_time": "00:24:22",
+        "bib": "73",
+        "runner_name": "Suzie Entwistle",
+        "gender": "female"
+    },
+    {
+        "finish_place": "58",
+        "finish_time": "00:24:23",
+        "bib": "414",
+        "runner_name": "Alden Groves",
+        "gender": "male"
+    },
+    {
+        "finish_place": "59",
+        "finish_time": "00:24:24",
+        "bib": "103",
+        "runner_name": "Rob Viola",
+        "gender": "male"
+    },
+    {
+        "finish_place": "60",
+        "finish_time": "00:24:24",
+        "bib": "376",
+        "runner_name": "Liz Huckins",
+        "gender": "female"
+    },
+    {
+        "finish_place": "61",
+        "finish_time": "00:24:36",
+        "bib": "365",
+        "runner_name": "C Harmon",
+        "gender": "male"
+    },
+    {
+        "finish_place": "62",
+        "finish_time": "00:24:37",
+        "bib": "364",
+        "runner_name": "Kristy Perkowski",
+        "gender": "female"
+    },
+    {
+        "finish_place": "63",
+        "finish_time": "00:24:38",
+        "bib": "178",
+        "runner_name": "William Dow",
+        "gender": "male"
+    },
+    {
+        "finish_place": "64",
+        "finish_time": "00:24:42",
+        "bib": "8",
+        "runner_name": "Nellie Honan",
+        "gender": "female"
+    },
+    {
+        "finish_place": "65",
+        "finish_time": "00:24:55",
+        "bib": "46",
+        "runner_name": "Jose Padua",
+        "gender": "male"
+    },
+    {
+        "finish_place": "66",
+        "finish_time": "00:25:23",
+        "bib": "209",
+        "runner_name": "Michael Dunnigan",
+        "gender": "male"
+    },
+    {
+        "finish_place": "67",
+        "finish_time": "00:25:38",
+        "bib": "262",
+        "runner_name": "Sydney Damian-loring",
+        "gender": "female"
+    },
+    {
+        "finish_place": "68",
+        "finish_time": "00:25:39",
+        "bib": "63",
+        "runner_name": "Beth Dupuis",
+        "gender": "female"
+    },
+    {
+        "finish_place": "69",
+        "finish_time": "00:25:42",
+        "bib": "119",
+        "runner_name": "Brian Conroy",
+        "gender": "male"
+    },
+    {
+        "finish_place": "70",
+        "finish_time": "00:25:48",
+        "bib": "266",
+        "runner_name": "Clare Cline",
+        "gender": "female"
+    },
+    {
+        "finish_place": "71",
+        "finish_time": "00:25:53",
+        "bib": "152",
+        "runner_name": "Randy Moore",
+        "gender": "male"
+    },
+    {
+        "finish_place": "72",
+        "finish_time": "00:25:54",
+        "bib": "295",
+        "runner_name": "J M",
+        "gender": "female"
+    },
+    {
+        "finish_place": "73",
+        "finish_time": "00:26:04",
+        "bib": "151",
+        "runner_name": "Mikaella Sansoucie",
+        "gender": "female"
+    },
+    {
+        "finish_place": "74",
+        "finish_time": "00:26:19",
+        "bib": "185",
+        "runner_name": "Parker Sewell",
+        "gender": "male"
+    },
+    {
+        "finish_place": "75",
+        "finish_time": "00:26:33",
+        "bib": "126",
+        "runner_name": "Richard Qualey",
+        "gender": "male"
+    },
+    {
+        "finish_place": "76",
+        "finish_time": "00:26:36",
+        "bib": "430",
+        "runner_name": "Michele Sandler",
+        "gender": "female"
+    },
+    {
+        "finish_place": "77",
+        "finish_time": "00:26:37",
+        "bib": "122",
+        "runner_name": "Anthony Romano",
+        "gender": "male"
+    },
+    {
+        "finish_place": "78",
+        "finish_time": "00:26:39",
+        "bib": "421",
+        "runner_name": "Thomas Delaney",
+        "gender": "male"
+    },
+    {
+        "finish_place": "79",
+        "finish_time": "00:26:42",
+        "bib": "0",
+        "runner_name": "{unknown runner}",
+        "gender": "male"
+    },
+    {
+        "finish_place": "80",
+        "finish_time": "00:26:44",
+        "bib": "136",
+        "runner_name": "Jack Woodbury",
+        "gender": "male"
+    },
+    {
+        "finish_place": "81",
+        "finish_time": "00:26:58",
+        "bib": "130",
+        "runner_name": "Samantha Wood",
+        "gender": "female"
+    },
+    {
+        "finish_place": "82",
+        "finish_time": "00:27:11",
+        "bib": "314",
+        "runner_name": "Patrick Flaherty",
+        "gender": "male"
+    },
+    {
+        "finish_place": "83",
+        "finish_time": "00:27:25",
+        "bib": "243",
+        "runner_name": "Jake Jacobson",
+        "gender": "male"
+    },
+    {
+        "finish_place": "84",
+        "finish_time": "00:27:29",
+        "bib": "301",
+        "runner_name": "Tom Knight",
+        "gender": "male"
+    },
+    {
+        "finish_place": "85",
+        "finish_time": "00:27:46",
+        "bib": "313",
+        "runner_name": "Cecilia Ziko",
+        "gender": "female"
+    },
+    {
+        "finish_place": "86",
+        "finish_time": "00:27:54",
+        "bib": "87",
+        "runner_name": "Matt Dragos",
+        "gender": "male"
+    },
+    {
+        "finish_place": "87",
+        "finish_time": "00:28:05",
+        "bib": "59",
+        "runner_name": "Robin Wescott",
+        "gender": "male"
+    },
+    {
+        "finish_place": "88",
+        "finish_time": "00:28:06",
+        "bib": "170",
+        "runner_name": "Nicholas Handanos",
+        "gender": "male"
+    },
+    {
+        "finish_place": "89",
+        "finish_time": "00:28:08",
+        "bib": "110",
+        "runner_name": "Chris Baba",
+        "gender": "male"
+    },
+    {
+        "finish_place": "90",
+        "finish_time": "00:28:10",
+        "bib": "34",
+        "runner_name": "Ralph Cryan",
+        "gender": "male"
+    },
+    {
+        "finish_place": "91",
+        "finish_time": "00:28:10",
+        "bib": "193",
+        "runner_name": "Doug Suitor",
+        "gender": "male"
+    },
+    {
+        "finish_place": "92",
+        "finish_time": "00:28:17",
+        "bib": "105",
+        "runner_name": "Angela Viola",
+        "gender": "female"
+    },
+    {
+        "finish_place": "93",
+        "finish_time": "00:28:19",
+        "bib": "303",
+        "runner_name": "Mac Brucker",
+        "gender": "male"
+    },
+    {
+        "finish_place": "94",
+        "finish_time": "00:28:21",
+        "bib": "253",
+        "runner_name": "Cindy Harris",
+        "gender": "female"
+    },
+    {
+        "finish_place": "95",
+        "finish_time": "00:28:22",
+        "bib": "256",
+        "runner_name": "Andrew Portwine",
+        "gender": "male"
+    },
+    {
+        "finish_place": "96",
+        "finish_time": "00:28:27",
+        "bib": "236",
+        "runner_name": "Eric Knutsen",
+        "gender": "male"
+    },
+    {
+        "finish_place": "97",
+        "finish_time": "00:28:33",
+        "bib": "84",
+        "runner_name": "Doug Bailey",
+        "gender": "male"
+    },
+    {
+        "finish_place": "98",
+        "finish_time": "00:28:39",
+        "bib": "38",
+        "runner_name": "Tom Hatch",
+        "gender": "male"
+    },
+    {
+        "finish_place": "99",
+        "finish_time": "00:28:46",
+        "bib": "354",
+        "runner_name": "Kerri Murphy",
+        "gender": "female"
+    },
+    {
+        "finish_place": "100",
+        "finish_time": "00:28:58",
+        "bib": "131",
+        "runner_name": "Paul Boutin",
+        "gender": "male"
+    },
+    {
+        "finish_place": "101",
+        "finish_time": "00:28:59",
+        "bib": "50",
+        "runner_name": "Jay Wilson",
+        "gender": "male"
+    },
+    {
+        "finish_place": "102",
+        "finish_time": "00:29:12",
+        "bib": "37",
+        "runner_name": "Emily Lane",
+        "gender": "female"
+    },
+    {
+        "finish_place": "103",
+        "finish_time": "00:29:21",
+        "bib": "9",
+        "runner_name": "Dariya Polyakova",
+        "gender": "female"
+    },
+    {
+        "finish_place": "104",
+        "finish_time": "00:29:24",
+        "bib": "222",
+        "runner_name": "Clif Smith",
+        "gender": "male"
+    },
+    {
+        "finish_place": "105",
+        "finish_time": "00:29:30",
+        "bib": "21",
+        "runner_name": "Pam Cates",
+        "gender": "female"
+    },
+    {
+        "finish_place": "106",
+        "finish_time": "00:29:31",
+        "bib": "469",
+        "runner_name": "Chuck Hall",
+        "gender": "male"
+    },
+    {
+        "finish_place": "107",
+        "finish_time": "00:29:38",
+        "bib": "244",
+        "runner_name": "Sharie Pillsbury",
+        "gender": "female"
+    },
+    {
+        "finish_place": "108",
+        "finish_time": "00:29:38",
+        "bib": "109",
+        "runner_name": "Dereck Tuttle",
+        "gender": "male"
+    },
+    {
+        "finish_place": "109",
+        "finish_time": "00:29:48",
+        "bib": "78",
+        "runner_name": "Philip Carr",
+        "gender": "male"
+    },
+    {
+        "finish_place": "110",
+        "finish_time": "00:30:18",
+        "bib": "76",
+        "runner_name": "Max Thiele",
+        "gender": "male"
+    },
+    {
+        "finish_place": "111",
+        "finish_time": "00:30:31",
+        "bib": "372",
+        "runner_name": "Beth Peary",
+        "gender": "female"
+    },
+    {
+        "finish_place": "112",
+        "finish_time": "00:30:38",
+        "bib": "102",
+        "runner_name": "Jenna Hirshfeld",
+        "gender": "female"
+    },
+    {
+        "finish_place": "113",
+        "finish_time": "00:30:43",
+        "bib": "117",
+        "runner_name": "Gabrielle Bock",
+        "gender": "female"
+    },
+    {
+        "finish_place": "114",
+        "finish_time": "00:30:44",
+        "bib": "116",
+        "runner_name": "Angus Koller",
+        "gender": "male"
+    },
+    {
+        "finish_place": "115",
+        "finish_time": "00:30:44",
+        "bib": "268",
+        "runner_name": "Brian Conrad",
+        "gender": "male"
+    },
+    {
+        "finish_place": "116",
+        "finish_time": "00:30:53",
+        "bib": "310",
+        "runner_name": "Henry Quintal",
+        "gender": "male"
+    },
+    {
+        "finish_place": "117",
+        "finish_time": "00:30:55",
+        "bib": "138",
+        "runner_name": "Erin Morton",
+        "gender": "female"
+    },
+    {
+        "finish_place": "118",
+        "finish_time": "00:31:00",
+        "bib": "120",
+        "runner_name": "Kate Handville",
+        "gender": "female"
+    },
+    {
+        "finish_place": "119",
+        "finish_time": "00:31:03",
+        "bib": "289",
+        "runner_name": "Nick Van Tubbergen",
+        "gender": "male"
+    },
+    {
+        "finish_place": "120",
+        "finish_time": "00:31:22",
+        "bib": "114",
+        "runner_name": "Tom Morrione",
+        "gender": "male"
+    },
+    {
+        "finish_place": "121",
+        "finish_time": "00:31:23",
+        "bib": "79",
+        "runner_name": "Barbara Szatkowski",
+        "gender": "female"
+    },
+    {
+        "finish_place": "122",
+        "finish_time": "00:31:48",
+        "bib": "366",
+        "runner_name": "Kristin Harmon",
+        "gender": "female"
+    },
+    {
+        "finish_place": "123",
+        "finish_time": "00:31:52",
+        "bib": "94",
+        "runner_name": "Victoria Pierson",
+        "gender": "female"
+    },
+    {
+        "finish_place": "124",
+        "finish_time": "00:31:59",
+        "bib": "361",
+        "runner_name": "Cindy Perkins",
+        "gender": "female"
+    },
+    {
+        "finish_place": "125",
+        "finish_time": "00:32:12",
+        "bib": "24",
+        "runner_name": "Lillian Tessier-hill",
+        "gender": "female"
+    },
+    {
+        "finish_place": "126",
+        "finish_time": "00:32:34",
+        "bib": "121",
+        "runner_name": "Barbara Romano",
+        "gender": "female"
+    },
+    {
+        "finish_place": "127",
+        "finish_time": "00:32:43",
+        "bib": "302",
+        "runner_name": "Anna Smith",
+        "gender": "female"
+    },
+    {
+        "finish_place": "128",
+        "finish_time": "00:32:58",
+        "bib": "183",
+        "runner_name": "Madison Dinsmore",
+        "gender": "female"
+    },
+    {
+        "finish_place": "129",
+        "finish_time": "00:32:59",
+        "bib": "308",
+        "runner_name": "Christopher Piik",
+        "gender": "male"
+    },
+    {
+        "finish_place": "130",
+        "finish_time": "00:33:06",
+        "bib": "4",
+        "runner_name": "Marilyn Bell",
+        "gender": "female"
+    },
+    {
+        "finish_place": "131",
+        "finish_time": "00:33:14",
+        "bib": "283",
+        "runner_name": "Katherine Lafferty",
+        "gender": "female"
+    },
+    {
+        "finish_place": "132",
+        "finish_time": "00:34:45",
+        "bib": "147",
+        "runner_name": "Tara Mullen",
+        "gender": "female"
+    },
+    {
+        "finish_place": "133",
+        "finish_time": "00:34:48",
+        "bib": "179",
+        "runner_name": "Tanya Holbrook",
+        "gender": "female"
+    },
+    {
+        "finish_place": "134",
+        "finish_time": "00:34:54",
+        "bib": "279",
+        "runner_name": "Rose Glennie",
+        "gender": "female"
+    },
+    {
+        "finish_place": "135",
+        "finish_time": "00:35:00",
+        "bib": "424",
+        "runner_name": "Lauren Flanders",
+        "gender": "female"
+    },
+    {
+        "finish_place": "136",
+        "finish_time": "00:35:29",
+        "bib": "20",
+        "runner_name": "Annemarie (carmie) Heisler",
+        "gender": "female"
+    },
+    {
+        "finish_place": "137",
+        "finish_time": "00:36:01",
+        "bib": "81",
+        "runner_name": "Theresa Dragos",
+        "gender": "female"
+    },
+    {
+        "finish_place": "138",
+        "finish_time": "00:36:18",
+        "bib": "276",
+        "runner_name": "Ambrose Mccullough",
+        "gender": "male"
+    },
+    {
+        "finish_place": "139",
+        "finish_time": "00:36:24",
+        "bib": "215",
+        "runner_name": "Michael Brown",
+        "gender": "male"
+    },
+    {
+        "finish_place": "140",
+        "finish_time": "00:36:52",
+        "bib": "186",
+        "runner_name": "Bria Robinson",
+        "gender": "female"
+    },
+    {
+        "finish_place": "141",
+        "finish_time": "00:37:32",
+        "bib": "72",
+        "runner_name": "Philip Pierce",
+        "gender": "female"
+    },
+    {
+        "finish_place": "142",
+        "finish_time": "00:39:24",
+        "bib": "7",
+        "runner_name": "Erin Irish",
+        "gender": "female"
+    },
+    {
+        "finish_place": "143",
+        "finish_time": "00:39:25",
+        "bib": "6",
+        "runner_name": "Hank Lopez",
+        "gender": "male"
+    },
+    {
+        "finish_place": "144",
+        "finish_time": "00:40:05",
+        "bib": "133",
+        "runner_name": "Megan Richards",
+        "gender": "female"
+    },
+    {
+        "finish_place": "145",
+        "finish_time": "00:40:07",
+        "bib": "132",
+        "runner_name": "Chris Broere",
+        "gender": "male"
+    },
+    {
+        "finish_place": "146",
+        "finish_time": "00:40:22",
+        "bib": "374",
+        "runner_name": "Steven Wolejko",
+        "gender": "male"
+    },
+    {
+        "finish_place": "147",
+        "finish_time": "00:40:52",
+        "bib": "317",
+        "runner_name": "Scott Ouillette",
+        "gender": "male"
+    },
+    {
+        "finish_place": "148",
+        "finish_time": "00:41:17",
+        "bib": "51",
+        "runner_name": "Angeline Brown-wilson",
+        "gender": "female"
+    },
+    {
+        "finish_place": "149",
+        "finish_time": "00:42:29",
+        "bib": "297",
+        "runner_name": "Nicole Peterson",
+        "gender": "female"
+    },
+    {
+        "finish_place": "150",
+        "finish_time": "00:42:46",
+        "bib": "417",
+        "runner_name": "Jeff Edwards",
+        "gender": "male"
+    },
+    {
+        "finish_place": "151",
+        "finish_time": "00:42:59",
+        "bib": "260",
+        "runner_name": "Kristen Thibodeau",
+        "gender": "female"
+    },
+    {
+        "finish_place": "152",
+        "finish_time": "00:48:41",
+        "bib": "135",
+        "runner_name": "Bill Vickerson",
+        "gender": "male"
+    }
+]

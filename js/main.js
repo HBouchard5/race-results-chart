@@ -77,34 +77,30 @@ reader.onload = function (e) {
   percentileContainer.classList.remove("hidden")
 
   //Add series data to histogram chart
-  histChart.addSeries({
-    name: 'Histogram M',
-    type: 'histogram',
-    color: '#0000FF',
-    opacity: 0.9,
-    binsNumber: 30,
-    //pointInterval: 3*60*1000, // three minute intervals
-    pointPlacement: 'between',
-    xAxis: 1,
-    yAxis: 1,
-    baseSeries: 's1',
-    zIndex: -1,
-  })
-  histChart.addSeries({
-    name: 'Finish Times M',
+  histChart.addSeries({   //Scatterplot Female
+    name: 'Female',
     type: 'scatter',
-    color: '#000000',
-    visible: false,
+    color: '#FE5800',
+    data: timesFemale,  //data array from variable
+    id: 's2',
+    marker: {
+      radius: 1.5
+    }
+  })   
+  histChart.addSeries({   //Scatterplot Male
+    name: 'Male',
+    type: 'scatter',
+    color: '#676767',
     data: timesMale,  //data array from variable
     id: 's1',
     marker: {
-      radius: 1
+      radius: 1.5
     }
   })
-  histChart.addSeries({
+  histChart.addSeries({   //Histogram Female
     name: 'Histogram F',
     type: 'histogram',
-    color: '#FF0000',
+    color: '#FF7300',
     opacity: 0.9,
     binsNumber: 30,
     //pointInterval: 3*60*1000, // three minute intervals
@@ -114,37 +110,40 @@ reader.onload = function (e) {
     baseSeries: 's2',
     zIndex: -1,
   })
-  histChart.addSeries({
-    name: 'Finish Times F',
-    type: 'scatter',
-    color: '#3d2254',
-    visible: false,
-    data: timesFemale,  //data array from variable
-    id: 's2',
-    marker: {
-      radius: 1
-    }
+  histChart.addSeries({   //Histogram Male
+    name: 'Histogram M',
+    type: 'histogram',
+    color: '#808080',
+    opacity: 0.9,
+    binsNumber: 30,
+    //pointInterval: 3*60*1000, // three minute intervals
+    pointPlacement: 'between',
+    xAxis: 1,
+    yAxis: 1,
+    baseSeries: 's1',
+    zIndex: -1,
   })
   
   //Add data series to percentile chart
   percentileChart.addSeries({
-    name: 'Male',
+    name: 'Female',
     type: 'scatter',
-    color: '#0000FF',
-    data: percentileMale,   //data array variable
+    color: '#FE5800',
+    data: percentileFemale,   //data array variable
     marker: {
-      radius: 1
+      radius: 2
     }
   })
   percentileChart.addSeries({
-    name: 'Female',
+    name: 'Male',
     type: 'scatter',
-    color: '#FF0000',
-    data: percentileFemale,   //data array variable
+    color: '#676767',
+    data: percentileMale,   //data array variable
     marker: {
-      radius: 1
+      radius: 2
     }
   })
+  
 
   //hide user input form after CSV file is selected
   let inputSection = document.getElementById("input-section")
@@ -153,8 +152,8 @@ reader.onload = function (e) {
   //show CSV file name
   let dataSection = document.getElementById("race-info")
   dataSection.classList.remove("hidden")
-  
-  console.log(e.target.files[0].name)
+
+  //console.log(e.target.files[0].name)
 
   
 

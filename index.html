@@ -95,7 +95,7 @@
         }, {
             //histogram x-axis for finish time
             type: 'datetime',
-            title: { text: 'Finish Time (HH:MM)' },
+            title: { text: 'Finish Time' },
             min: 15*60*1000,  
         }],
         yAxis: [{
@@ -112,11 +112,11 @@
         //tooltip formatting for histogram and scatterplot using HTML
         tooltip: {
           xDateFormat: '%M:%S',
-          useHTML: true,
-          headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-          pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-                '<td style="text-align: right"><b>{point.y} </b></td></tr>',
-          footerFormat: '</table>',
+          //useHTML: true,
+          //headerFormat: '<table><tr><th>Finish Time: </th><th colspan="2">{point.x} - {point.x2}</th></tr>',
+          //pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
+          //      '<td style="text-align: right"><b>{point.y} </b></td></tr>',
+          //footerFormat: '</table>',
         },
         //change default font-family
         chart: {
@@ -128,7 +128,7 @@
           align: 'right',
           floating: true,
           verticalAlign: 'middle',
-          x: -100,
+          //x: -50,
         },
         //accessibility options for histogram
         plotOptions: {
@@ -164,9 +164,9 @@
         tooltip: {
           xDateFormat: '%H:%M:%S',
           useHTML: true,
-          headerFormat: '<table><tr><th colspan="2">{point.key}</th></tr>',
-          pointFormat: '<tr><td style="color: {series.color}">{series.name} </td>' +
-                '<td style="text-align: right"><b>{point.y} %</b></td></tr>',
+          headerFormat: '<table><tr><th>Finish Time: </th><th colspan="2">{point.key}</th></tr>',
+          pointFormat: '<tr><td style="color: {series.color}">Finish Percentile: </td>' +
+                '<td style="text-align: right; color: {series.color}"><b>{point.y} %</b></td></tr>',
           footerFormat: '</table>',
           valueDecimals: 0
         },
